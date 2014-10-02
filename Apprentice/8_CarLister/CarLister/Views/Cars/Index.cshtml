@@ -1,0 +1,85 @@
+﻿@model IEnumerable<Car>
+@using WebApplication2.Models
+
+@{
+    ViewBag.Title = "CF Exotics";
+}
+
+<h2>@ViewBag.Title</h2>
+
+    <!-- Topic Header -->
+    <div class="topic">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6">
+                    <h3 class="primary-font">Extraordinary affordability... but mostly not.</h3>
+                </div>
+                <div class="col-md-6">
+                    <ol class="breadcrumb pull-right hidden-xs">
+                        <li>@Html.ActionLink("Home", "Index", "Home")</li>
+                        <li class="active">Portfolio</li>
+                    </ol>
+                </div>
+            </div>
+        </div>
+    </div>
+    @if (User.IsInRole("Administrator"))
+    { 
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="btn-group">
+                        @Html.ActionLink("Add Car", "Create", "Cars", null, new { @class = "btn btn-default" })
+                    </div>
+                </div>
+            </div>
+        </div>
+        <br />
+    }
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="btn-group" id="filters">
+                    <a href="#" class="btn btn-color" data-filter="*" id="filter_all">All</a>
+                    <a href="#" class="btn btn-color" data-filter=".cat-1"><span class="hidden-xs">European</span></a>
+                    <a href="#" class="btn btn-color" data-filter=".cat-2"><span class="hidden-xs">American</span></a>
+                    <a href="#" class="btn btn-color" data-filter=".cat-3"><span class="hidden-xs">Asian</span></a>
+                    <a href="#" class="btn btn-color" data-filter=".cat-4"><span class="hidden-xs">Other</span></a>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <ul class="col-md-12 list-inline glr-list-p" id="isotope-container">
+                @foreach (var item in Model)
+                {
+                    Html.HiddenFor(modelItem => item.Id);
+                    Html.HiddenFor(modelItem => item.Path);
+                    string category;
+                    switch (item.CategoryId)
+                    {
+                        case 1: // European
+                            category = "isotope-item cat-1";
+                            break;
+                        case 2: // American
+                            category = "isotope-item cat-2";
+                            break;
+                        case 3: // Asian
+                            category = "isotope-item cat-3";
+                            break;
+                        default:
+                            category = "isotope-item cat-4";
+                            break;
+                    }
+                    <li class="@category">
+                        <div class="portfolio-item">
+                            <a href='@Url.Action("Details", "Cars", new { id = item.Id })'>
+                                <img src="@Url.Content(item.PicUrl)" class="img-responsive" alt="...">
+                                <div class="mask" style="font-size:smaller">@item.Year @item.Make @item.Model</div>
+                            </a>
+                        </div>
+                    </li>
+                }
+            </ul>
+        </div>
+    </div> <!-- / .container -->
+

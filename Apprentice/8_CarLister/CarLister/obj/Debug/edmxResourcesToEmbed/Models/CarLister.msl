@@ -1,0 +1,28 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="CarListerModelStoreContainer" CdmEntityContainer="CarListerEntities">
+    <EntitySetMapping Name="Cars">
+      <EntityTypeMapping TypeName="CarListerModel.Car">
+        <MappingFragment StoreEntitySet="Cars">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Year" ColumnName="Year" />
+          <ScalarProperty Name="Make" ColumnName="Make" />
+          <ScalarProperty Name="Model" ColumnName="Model" />
+          <ScalarProperty Name="PicUrl" ColumnName="PicUrl" />
+          <ScalarProperty Name="Value" ColumnName="Value" />
+          <ScalarProperty Name="Path" ColumnName="Path" />
+          <ScalarProperty Name="CategoryId" ColumnName="CategoryId" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Categories">
+      <EntityTypeMapping TypeName="CarListerModel.Category">
+        <MappingFragment StoreEntitySet="Category">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

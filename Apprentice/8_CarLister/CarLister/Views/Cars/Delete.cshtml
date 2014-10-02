@@ -1,0 +1,66 @@
+﻿@model WebApplication2.Models.Car
+
+@{
+    ViewBag.Title = "Delete";
+}
+
+<h2>Remove Car</h2>
+
+<h3>Are you sure you want to remove this car?</h3>
+<div>
+    <hr />
+    <dl class="dl-horizontal">
+        @Html.HiddenFor(model => model.Path)
+        <dt>
+            @Html.DisplayNameFor(model => model.Year)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Year)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Make)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Make)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Model)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Model)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Value)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Value)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.PicUrl)
+        </dt>
+
+        <dd>
+            <img src="@Url.Content(Model.PicUrl)" width="200">
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <div class="col-md-offset-1 col-md-12">
+                <input type="submit" value="Delete" class="btn btn-default" /> <br /><br />
+            </div>
+            @Html.ActionLink("Back to List", "Index")
+        </div>
+    }
+</div>

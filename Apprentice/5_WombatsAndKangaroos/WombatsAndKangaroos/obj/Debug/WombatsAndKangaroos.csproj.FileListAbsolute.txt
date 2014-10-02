@@ -1,0 +1,13 @@
+c:\users\ajensen.ctu\documents\visual studio 2013\Projects\WombatsAndKangaroos\WombatsAndKangaroos\bin\Debug\WombatsAndKangaroos.exe.config
+c:\users\ajensen.ctu\documents\visual studio 2013\Projects\WombatsAndKangaroos\WombatsAndKangaroos\bin\Debug\WombatsAndKangaroos.exe
+c:\users\ajensen.ctu\documents\visual studio 2013\Projects\WombatsAndKangaroos\WombatsAndKangaroos\bin\Debug\WombatsAndKangaroos.pdb
+c:\users\ajensen.ctu\documents\visual studio 2013\Projects\WombatsAndKangaroos\WombatsAndKangaroos\obj\Debug\WombatsAndKangaroos.csprojResolveAssemblyReference.cache
+c:\users\ajensen.ctu\documents\visual studio 2013\Projects\WombatsAndKangaroos\WombatsAndKangaroos\obj\Debug\WombatsAndKangaroos.Properties.Resources.resources
+c:\users\ajensen.ctu\documents\visual studio 2013\Projects\WombatsAndKangaroos\WombatsAndKangaroos\obj\Debug\WombatsAndKangaroos.csproj.GenerateResource.Cache
+c:\users\ajensen.ctu\documents\visual studio 2013\Projects\WombatsAndKangaroos\WombatsAndKangaroos\obj\Debug\WombatsAndKangaroos.exe
+c:\users\ajensen.ctu\documents\visual studio 2013\Projects\WombatsAndKangaroos\WombatsAndKangaroos\obj\Debug\WombatsAndKangaroos.pdb
+c:\users\ajensen.ctu\documents\visual studio 2013\Projects\WombatsAndKangaroos\WombatsAndKangaroos\obj\Debug\WombatsAndKangaroos.AddCreature.resources
+C:\Users\ajensen.CTU\Documents\Visual Studio 2013\Projects\WombatsAndKangaroos\WombatsAndKangaroos\obj\Debug\WombatsAndKangaroos.Menu.resources
+C:\Users\ajensen.CTU\Documents\Visual Studio 2013\Projects\WombatsAndKangaroos\WombatsAndKangaroos\obj\Debug\WombatsAndKangaroos.ViewCreatureTypes.resources
+C:\Users\ajensen.CTU\Documents\Visual Studio 2013\Projects\WombatsAndKangaroos\WombatsAndKangaroos\obj\Debug\WombatsAndKangaroos.AddCreatureType.resources
+C:\Users\ajensen.CTU\Documents\Visual Studio 2013\Projects\WombatsAndKangaroos\WombatsAndKangaroos\obj\Debug\WombatsAndKangaroos.ViewCreatures.resources
