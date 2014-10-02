@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="3cc99c4dd7b34fae9e1e4a92cdd1cdcc" Name="Diagram1">
+        <EntityTypeShape EntityType="BugSleuthModel.BTUser" Width="1.5" PointX="0.75" PointY="10.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="BugSleuthModel.Project" Width="1.5" PointX="3.75" PointY="18.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="BugSleuthModel.ProjectUser" Width="1.5" PointX="3" PointY="11.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="BugSleuthModel.TicketAttachment" Width="1.5" PointX="6" PointY="10.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="BugSleuthModel.TicketComment" Width="1.5" PointX="3" PointY="8" IsExpanded="true" />
+        <EntityTypeShape EntityType="BugSleuthModel.TicketHistory" Width="1.5" PointX="3" PointY="14.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="BugSleuthModel.TicketNotification" Width="1.5" PointX="6" PointY="7.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="BugSleuthModel.TicketPriority" Width="1.5" PointX="3.75" PointY="21.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="BugSleuthModel.Ticket" Width="1.5" PointX="6" PointY="14.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="BugSleuthModel.TicketStatus" Width="1.5" PointX="3.75" PointY="23.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="BugSleuthModel.TicketType" Width="1.5" PointX="3.75" PointY="26" IsExpanded="true" />
+        <AssociationConnector Association="BugSleuthModel.FK_ProjectUsers_AppUsers" ManuallyRouted="false" />
+        <AssociationConnector Association="BugSleuthModel.FK_TicketAttachments_AppUsers" ManuallyRouted="false" />
+        <AssociationConnector Association="BugSleuthModel.FK_TicketComments_AppUsers" ManuallyRouted="false" />
+        <AssociationConnector Association="BugSleuthModel.FK_TicketHistories_AppUsers" ManuallyRouted="false" />
+        <AssociationConnector Association="BugSleuthModel.FK_TicketNotifications_AppUsers" ManuallyRouted="false" />
+        <AssociationConnector Association="BugSleuthModel.FK_Tickets_AppUsers" ManuallyRouted="false" />
+        <AssociationConnector Association="BugSleuthModel.FK_Tickets_AppUsers1" ManuallyRouted="false" />
+        <AssociationConnector Association="BugSleuthModel.FK_ProjectUsers_Projects" ManuallyRouted="false" />
+        <AssociationConnector Association="BugSleuthModel.FK_Tickets_Projects" ManuallyRouted="false" />
+        <AssociationConnector Association="BugSleuthModel.FK_TicketAttachments_Tickets" ManuallyRouted="false" />
+        <AssociationConnector Association="BugSleuthModel.FK_TicketComments_Tickets" ManuallyRouted="false" />
+        <AssociationConnector Association="BugSleuthModel.FK_TicketHistories_Tickets" ManuallyRouted="false" />
+        <AssociationConnector Association="BugSleuthModel.FK_TicketNotifications_Tickets" ManuallyRouted="false" />
+        <AssociationConnector Association="BugSleuthModel.FK_Tickets_TicketPriorities" ManuallyRouted="false" />
+        <AssociationConnector Association="BugSleuthModel.FK_Tickets_TicketStatuses" ManuallyRouted="false" />
+        <AssociationConnector Association="BugSleuthModel.FK_Tickets_TicketTypes" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>
