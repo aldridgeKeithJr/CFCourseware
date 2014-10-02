@@ -1,0 +1,12 @@
+C:\Users\ajensen.CTU\Documents\Visual Studio 2013\Projects\MyConsoleApp\MyConsoleApp\bin\Debug\RealEstate.exe.config
+C:\Users\ajensen.CTU\Documents\Visual Studio 2013\Projects\MyConsoleApp\MyConsoleApp\obj\Debug\RealEstate.exe
+C:\Users\ajensen.CTU\Documents\Visual Studio 2013\Projects\MyConsoleApp\MyConsoleApp\obj\Debug\MyConsoleApp.csprojResolveAssemblyReference.cache
+C:\Users\ajensen.CTU\Documents\Visual Studio 2013\Projects\MyConsoleApp\MyConsoleApp\bin\Debug\RealEstate.exe
+C:\Users\ajensen.CTU\Documents\Visual Studio 2013\Projects\MyConsoleApp\MyConsoleApp\bin\Debug\RealEstate.pdb
+C:\Users\ajensen.CTU\Documents\Visual Studio 2013\Projects\MyConsoleApp\MyConsoleApp\obj\Debug\RealEstate.pdb
+C:\Users\ajensen.CTU\Documents\Visual Studio 2013\Projects\ConsoleApp3\MyConsoleApp\bin\Debug\RealEstate.exe.config
+C:\Users\ajensen.CTU\Documents\Visual Studio 2013\Projects\ConsoleApp3\MyConsoleApp\obj\Debug\RealEstate.exe
+C:\Users\ajensen.CTU\Documents\Visual Studio 2013\Projects\ConsoleApp3\MyConsoleApp\obj\Debug\RealEstate.pdb
+C:\Users\ajensen.CTU\Documents\Visual Studio 2013\Projects\ConsoleApp3\MyConsoleApp\bin\Debug\RealEstate.exe
+C:\Users\ajensen.CTU\Documents\Visual Studio 2013\Projects\ConsoleApp3\MyConsoleApp\bin\Debug\RealEstate.pdb
+C:\Users\ajensen.CTU\Documents\Visual Studio 2013\Projects\ConsoleApp3\MyConsoleApp\obj\Debug\MyConsoleApp.csprojResolveAssemblyReference.cache

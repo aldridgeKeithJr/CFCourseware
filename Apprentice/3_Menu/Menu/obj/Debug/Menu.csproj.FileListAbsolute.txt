@@ -1,0 +1,6 @@
+c:\users\ajensen.ctu\documents\visual studio 2013\Projects\Menu\Menu\bin\Debug\Menu.exe.config
+c:\users\ajensen.ctu\documents\visual studio 2013\Projects\Menu\Menu\bin\Debug\Menu.exe
+c:\users\ajensen.ctu\documents\visual studio 2013\Projects\Menu\Menu\bin\Debug\Menu.pdb
+c:\users\ajensen.ctu\documents\visual studio 2013\Projects\Menu\Menu\obj\Debug\Menu.csprojResolveAssemblyReference.cache
+c:\users\ajensen.ctu\documents\visual studio 2013\Projects\Menu\Menu\obj\Debug\Menu.exe
+c:\users\ajensen.ctu\documents\visual studio 2013\Projects\Menu\Menu\obj\Debug\Menu.pdb
