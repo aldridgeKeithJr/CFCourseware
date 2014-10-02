@@ -1,0 +1,76 @@
+﻿@model PagedList.IPagedList<BugSleuth.Models.Ticket>
+@using PagedList.Mvc;
+<link href="~/Content/PagedList.css" rel="stylesheet" type="text/css" />
+
+
+<div class="wrap-primary">
+    <div class="container boxed">
+
+        <h2>@ViewBag.Title</h2>
+
+        @{
+            if (ViewBag.pid == 0 && User.IsInRole("Submitter"))
+            {
+                <p>
+                    @Html.ActionLink("New Ticket", "Create") | 
+                </p>
+            }
+            @Html.ActionLink("Refresh Tickets", "Index", "Tickets", new { projectid = 0 }, null)
+        }
+
+        <table class="table table-hover">
+
+            <tr style="background-color:gainsboro">
+                @*Added to accommodate sorting by column heading - to be added later*@
+                @foreach (var col in new[] { "Title", "Last Updated", "Owner", "Assigned To", "Project", "Priority", "Status", "Type" })
+                {
+                    <th>
+                        @Html.ActionLink(col, "Sort", new { property = col, model = Model })
+                    </th>
+                }
+                <th></th>
+            </tr>
+
+            @foreach (var item in Model)
+            {
+                <tr>
+                    @Html.HiddenFor(modelItem => item.Description)
+                    @Html.HiddenFor(modelItem => item.Created)
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Title)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Updated)
+                    </td>
+                    <td>
+                        @Html.ActionLink(item.BTUser.DisplayName, "Index", new { param = item.BTUser.UserName, paramtype = "Owner" }, new { @class = "text-muted" })
+                    </td>
+                    <td>
+                        @Html.ActionLink(item.BTUser1.DisplayName, "Index", new { param = item.BTUser1.UserName, paramtype = "Assigned" }, new { @class = "text-muted" })
+                    </td>
+                    <td>
+                        @Html.ActionLink(item.Project.Name, "Index", new { projectid = item.ProjectId }, new { @class = "text-muted" })
+                    </td>
+                    <td>
+                        @Html.ActionLink(item.TicketPriority.Name, "Index", new { param = item.TicketPriority.Name, paramtype = "Priority" }, new { @class = "text-muted" })
+                    </td>
+                    <td>
+                        @Html.ActionLink(item.TicketStatus.Name, "Index", new { param = item.TicketStatus.Name, paramtype = "Status" }, new { @class = "text-muted" })
+                    </td>
+                    <td>
+                        @Html.ActionLink(item.TicketType.Name, "Index", new { param = item.TicketType.Name, paramtype = "Type" }, new { @class = "text-muted" })
+                    </td>
+                    <td>
+                        @Html.ActionLink("Edit", "Edit", new { id = item.Id }) |
+                        @Html.ActionLink("Details", "Details", new { id = item.Id })
+                    </td>
+                </tr>
+            }
+
+        </table>
+        <br />
+        Page @(Model.PageCount < Model.PageNumber ? 0 : Model.PageNumber) of @Model.PageCount
+
+        @Html.PagedListPager(Model, page => Url.Action("Index", new { page, projectid = ViewBag.pid }))
+    </div>
+</div>

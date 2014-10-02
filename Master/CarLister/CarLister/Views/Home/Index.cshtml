@@ -1,0 +1,114 @@
+﻿@{
+    ViewBag.Title = "Home Page";
+}
+
+    <!-- Jumbotron -->
+    <div class="main-slideshow">
+        <div id="main-slideshow" class="carousel slide" data-ride="carousel">
+            <div class="carousel-inner">
+                <!-- Slide No 1 -->
+                <div class="item active">
+                    <div class="jumbotron first">
+                        <div class="container">
+                            <div class="row">
+                                <div class="col-sm-6">
+                                    <h1 class="animated slideInRight">CF Exotics</h1>
+                                    <p class="lead animated slideInLeft delay-1">Coder Foundry's Web project used to introduce students to the world of MVC</p>
+                                    @Html.ActionLink("View Cars", "Index", "Cars", null, new { @class = "btn btn-color animated slideInLeft delay-2" })
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Slide No 2 -->
+                <div class="item">
+                    <div class="jumbotron second">
+                        <div class="container">
+                            <div class="row">
+                                <div class="col-sm-12">
+                                    <h1 class="text-center animated fadeInDown">CF Exotics</h1>
+                                    <p class="lead text-center animated fadeInDown delay-1">HTML5, CSS, Bootstrap 3, C#, SQL, and more</p>
+                                    <div class="text-center animated fadeInDown delay-2">@Html.ActionLink("View Cars", "Index", "Cars", null, new { @class = "btn btn-color pull-center" })</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Slide No 3 -->
+                <div class="item">
+                    <div class="jumbotron third">
+                        <div class="container">
+                            <div class="row">
+                                <div class="col-sm-6">
+                                    <h1 class="animated slideInLeft">CF Exotics</h1>
+                                    <p class="lead animated slideInLeft delay-1">Database-first Development, Responsive Web Design, Secure User Management</p>
+                                    @Html.ActionLink("View Cars", "Index", "Cars", null, new { @class = "btn btn-color animated slideInLeft delay-2" })
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div> <!-- / Slide No 3 -->
+            </div>
+            <!-- Controls -->
+            <a class="slideshow-arrow slideshow-arrow-prev bg-hover-color" href="#main-slideshow" data-slide="prev">
+                <i class="fa fa-angle-left"></i>
+            </a>
+            <a class="slideshow-arrow slideshow-arrow-next bg-hover-color" href="#main-slideshow" data-slide="next">
+                <i class="fa fa-angle-right"></i>
+            </a>
+        </div>
+    </div> <!-- / Slideshow -->
+    <!-- Intro Text -->
+    <div class="container intro">
+        <!-- Our Services -->
+        <div class="row services">
+            <div class="col-sm-3">
+                <!-- Service Item #1 -->
+                <div class="services-item">
+                    <i class="fa fa-cloud-upload fa-2x text-color"></i>
+                    <div class="services-item-desc">
+                        <h3 class="primary-font">Database First Developement</h3>
+                        <p class="text-muted">
+                            This project introduces students to the concept of Database-First Development, the development method of choice for today's .NET developers.
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-3">
+                <!-- Service Item #2 -->
+                <div class="services-item">
+                    <i class="fa fa-gears fa-2x text-color"></i>
+                    <div class="services-item-desc">
+                        <h3 class="primary-font">MVC and Entity Framework</h3>
+                        <p class="text-muted">
+                            Build secure and efficient c# applications with Microsoft's MVC platform and Entity Framework, a must-have skill for the .NET developer.
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-3">
+                <!-- Service Item #3 -->
+                <div class="services-item">
+                    <i class="fa fa-html5 fa-2x text-color"></i>
+                    <div class="services-item-desc">
+                        <h3 class="primary-font">HTML 5</h3>
+                        <p class="text-muted">
+                            Make your Web pages more interactive with dynamic content using HTML 5, an essential skill for the Web developer of tomorrow.
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-3">
+                <!-- Service Item #4 -->
+                <div class="services-item">
+                    <i class="fa fa-bold fa-2x text-color"></i>
+                    <div class="services-item-desc">
+                        <h3 class="primary-font">Bootstrap 3 CSS</h3>
+                        <p class="text-muted">
+                            Create professional, responsive Web pages using Bootstrap 3 templates, the Web design framework of choice for modern Web developers.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div> <!-- / .row -->
+    </div> <!-- / .container -->
