@@ -1,0 +1,18 @@
+﻿@model Exercises.Models.TestViewModel
+
+@{
+    ViewBag.Title = "NewView";
+}
+
+<h2>NewView</h2>
+
+<h3>@Model.x</h3>
+
+<h4>
+    <div class="row">
+        @foreach (var item in Model.y)
+        {
+            <div class="col-md-1">@item</div>
+        }
+    </div>
+</h4>
