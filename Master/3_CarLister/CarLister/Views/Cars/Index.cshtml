@@ -1,5 +1,4 @@
-﻿@model IEnumerable<Car>
-@using WebApplication2.Models
+﻿@model IEnumerable<WebApplication2.Models.Car>
 
 @{
     ViewBag.Title = "CF Exotics";
@@ -30,6 +29,9 @@
                 <div class="col-md-12">
                     <div class="btn-group">
                         @Html.ActionLink("Add Car", "Create", "Cars", null, new { @class = "btn btn-default" })
+                    </div>
+                    <div class="btn-group">
+                        @Html.ActionLink("Uncool View", "Index_Simple", "Cars", null, new { @class = "btn btn-default" })
                     </div>
                 </div>
             </div>

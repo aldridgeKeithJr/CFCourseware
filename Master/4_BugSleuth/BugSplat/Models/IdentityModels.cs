@@ -17,7 +17,8 @@ namespace BugSleuth.Models
             return userIdentity;
         }
 
-        private UserManager<ApplicationUser> usermanager = new UserManager<ApplicationUser>(new UserStore<ApplicationUser>(new ApplicationDbContext()));
+        private UserManager<ApplicationUser> usermanager = 
+            new UserManager<ApplicationUser>(new UserStore<ApplicationUser>(new ApplicationDbContext()));
         
         public bool IsInRole(string rolename)
         {

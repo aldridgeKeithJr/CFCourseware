@@ -10,7 +10,8 @@
         <h2>Assign Users to Role</h2>
 
 
-        @using (Html.BeginForm("AssignUsers", "UserRoles", FormMethod.Post, new { encType = "multipart/form-data", name = "myform" }))
+        @using (Html.BeginForm("AssignUsers", "UserRoles", FormMethod.Post, 
+            new { encType = "multipart/form-data", name = "myform" }))
         {
             @Html.AntiForgeryToken()
 

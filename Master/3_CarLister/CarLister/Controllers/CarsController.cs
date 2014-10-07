@@ -23,6 +23,12 @@ namespace WebApplication2.Controllers
             return View(db.Cars.ToList());
         }
 
+        // GET: Cars1
+        public ActionResult Index_Simple()
+        {
+            return View(db.Cars.ToList());
+        }
+
         // GET: Cars1/Details/5
         public ActionResult Details(int? id)
         {

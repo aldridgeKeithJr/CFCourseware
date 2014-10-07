@@ -178,7 +178,7 @@
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\BTUsers1Controller.cs" />
-    <Compile Include="Controllers\BTUsersController.cs" />
+    <Compile Include="Controllers\CodeFile1.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
     <Compile Include="Controllers\ProjectsController.cs" />
@@ -188,12 +188,8 @@
     <Compile Include="Controllers\TicketCommentsController.cs" />
     <Compile Include="Controllers\TicketHistoriesController.cs" />
     <Compile Include="Controllers\TicketPrioritiesController.cs" />
-    <Compile Include="Controllers\Tickets1Controller.cs" />
     <Compile Include="Controllers\TicketsController.cs" />
     <Compile Include="Controllers\TicketStatusController.cs" />
-    <Compile Include="Controllers\Tickets_new_Controller.cs">
-      <SubType>Code</SubType>
-    </Compile>
     <Compile Include="Controllers\TicketTypesController.cs" />
     <Compile Include="Controllers\UserRolesController.cs" />
     <Compile Include="Global.asax.cs">
@@ -740,15 +736,9 @@
     <Content Include="Views\TicketHistories\Details.cshtml" />
     <Content Include="Views\Shared\_Layout.cshtml" />
     <Content Include="Views\Projects\Index.cshtml" />
-    <Content Include="Views\Tickets1\Create.cshtml" />
-    <Content Include="Views\Tickets1\Delete.cshtml" />
-    <Content Include="Views\Tickets1\Details.cshtml" />
-    <Content Include="Views\Tickets1\Edit.cshtml" />
-    <Content Include="Views\Tickets1\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Views\Tickets_new_\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="packages.config" />

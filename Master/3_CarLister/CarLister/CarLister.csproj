@@ -413,6 +413,7 @@
     <Content Include="Views\Roles\Index.cshtml" />
     <Content Include="Views\UserRoles\AssignUsers.cshtml" />
     <Content Include="Views\UserRoles\UsersInRole.cshtml" />
+    <Content Include="Views\Cars\Index_Simple.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

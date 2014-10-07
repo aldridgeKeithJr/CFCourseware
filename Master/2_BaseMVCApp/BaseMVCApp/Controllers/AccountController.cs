@@ -9,6 +9,7 @@ using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.Owin;
 using Microsoft.Owin.Security;
 using System.Text.RegularExpressions;
+using System.Collections.Generic;
 using BaseMVCApp.Models;
 
 namespace BaseMVCApp.Controllers
@@ -40,6 +41,151 @@ namespace BaseMVCApp.Controllers
             }
         }
 
+        //
+        // GET: /Account/ListRoles
+        [Authorize(Roles = "Administrator")]
+        public ActionResult ListRoles()
+        {
+            var db = new ApplicationDbContext();
+            var model = new List<RoleViewModel>();
+            foreach (var item in db.Roles)
+            {
+                model.Add(new RoleViewModel { RoleId = item.Id, RoleName = item.Name });
+            }
+            return View(model);
+        }
+
+        //
+        // GET: /Account/AssignUserRole
+        [Authorize(Roles = "Administrator")]
+        public ActionResult AssignUserRole(string roleid)
+        {
+            ViewBag.Message = (string)TempData["ListError"];
+            // 1) locate the role in the DB (you have the id of the role right here)
+            var db = new ApplicationDbContext();
+            var role = db.Roles.Find(roleid);
+            // 2) instantiate the view model
+            // 3) add the role ID and Name to the model
+            var model = new UserRoleViewModel { RoleId = role.Id, RoleName = role.Name };
+
+            // 4) instantiate the user list that is part of the view model
+            var userList = new List<ApplicationUser>();
+            // 5) loop through all of the system users and, as long as the user is NOT already in the role,
+            //      add the user to the list
+            foreach (var user in db.Users)
+            {
+                if (!UserManager.IsInRole(user.Id, model.RoleName))
+                {
+                    userList.Add(user);
+                }
+            }
+            // 6) instantiate the MultiSelectList object (in the model) using the newly built list
+            //      with appropriate value and display parameters
+            model.Users = new MultiSelectList(userList.OrderBy(u => u.UserName), "Id", "UserName");
+            // 7) send the model to the view
+            return View(model);
+        }
+
+        //
+        // POST: /Account/AssignUserRole
+        [HttpPost]
+        [Authorize(Roles = "Administrator")]
+        [ValidateAntiForgeryToken]
+        public ActionResult AssignUserRole(UserRoleViewModel model)
+        {
+            var db = new ApplicationDbContext();
+            // check the model state - if it's valid, continue, 
+            //  if not, return the view with the current model
+            if (ModelState.IsValid)
+            {
+                // check the SelectedUsers attribute of the model - if it's NOT null, continue
+                if (model.SelectedUsers != null)
+                {
+                    // loop through the elements in model.SelectedUsers - for each one in the array, 
+                    //      1) locate the user in the database, 
+                    //      2) add the user to the role specified in the model
+                    foreach (string userid in model.SelectedUsers)
+                    {
+                        UserManager.AddToRole(userid, model.RoleName);
+                    }
+                    // we've succeeded - go back to the roles list view
+                    return RedirectToAction("ListRoles");
+                }
+                else
+                {
+                    TempData["ListError"] = "You must select at least one user from the list.";
+                    return RedirectToAction("AssignUserRole", new { roleid = model.RoleId });
+                }
+            }
+            // if we get to this point, there's a problem - return the view with the model
+            return View(model);
+        }
+
+        //
+        // GET: /Account/UnassignUserRole
+        [Authorize(Roles = "Administrator")]
+        public ActionResult UnassignUserRole(string roleid)
+        {
+            ViewBag.Message = (string)TempData["ListError"];
+            // 1) locate the role in the DB (you have the id of the role right here)
+            var db = new ApplicationDbContext();
+            var role = db.Roles.Find(roleid);
+            // 2) instantiate the view model
+            // 3) add the role ID and Name to the model
+            var model = new UserRoleViewModel { RoleId = role.Id, RoleName = role.Name };
+            // 4) instantiate the user list that is part of the view model
+            var userList = new List<ApplicationUser>();
+            // 5) loop through all of the system users and, if the user is already in the role,
+            //      add the user to the list
+            foreach (var user in db.Users)
+            {
+                if (UserManager.IsInRole(user.Id, model.RoleName))
+                {
+                    userList.Add(user);
+                }
+            }
+            // 6) instantiate the MultiSelectList object (in the model) using the newly built list
+            //      with appropriate value and display parameters
+            model.Users = new MultiSelectList(userList.OrderBy(u => u.UserName), "Id", "UserName");
+            // 7) send the model to the view
+            return View(model);
+        }
+
+        //
+        // POST: /Account/UnassignUserRole
+        [HttpPost]
+        [Authorize(Roles = "Administrator")]
+        [ValidateAntiForgeryToken]
+        public ActionResult UnassignUserRole(UserRoleViewModel model)
+        {
+            var db = new ApplicationDbContext();
+            // check the model state - if it's valid, continue, 
+            //  if not, return the view with the current model
+            if (ModelState.IsValid)
+            {
+                // check the SelectedUsers attribute of the model - if it's NOT null, continue
+                if (model.SelectedUsers != null)
+                {
+                    // loop through the elements in model.SelectedUsers - for each one in the array, 
+                    //      1) locate the user in the database, 
+                    //      2) add the user to the role specified in the model
+                    foreach (string userid in model.SelectedUsers)
+                    {
+                        UserManager.RemoveFromRole(userid, model.RoleName);
+                    }
+                    // we've succeeded - go back to the roles list view
+                    return RedirectToAction("ListRoles");
+                }
+                else
+                {
+                    TempData["ListError"] = "You must select at least one user from the list.";
+                    return RedirectToAction("UnassignUserRole", new { roleid = model.RoleId });
+                }
+            }
+            // if we get to this point, there's a problem - return the view with the model
+            return View(model);
+        }
+        
         //
         // GET: /Account/Login
         [AllowAnonymous]

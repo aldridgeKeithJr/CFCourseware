@@ -1,0 +1,108 @@
+﻿@model IEnumerable<WebApplication2.Models.Car>
+
+<style type="text/css">
+    /*THUMBNAIL HOVER POPUPS*/
+
+    .thumbnail {
+        position: relative;
+        float: left;
+        padding: 0px;
+    }
+
+        .thumbnail span { /* CSS for full size image */
+            position: absolute;
+            border: 1px solid #666;
+            visibility: hidden;
+        }
+
+        .thumbnail:hover span { /*CSS for enlarged image on hover*/
+            visibility: visible;
+            top: -10px; /* position the top of the image 10 pixels up relative to top of the thumbnail - puts it right at the top of the row */
+            left: -550px; /* position the left edge of the image 700 pixels left of the thumbnail - overlays the table text without covering the thumbnail */
+        }
+</style>
+
+@{
+    ViewBag.Title = "CF Exotics";
+}
+
+    <h2>@ViewBag.Title</h2>
+    
+    <!-- Topic Header -->
+    <div class="topic">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6">
+                    <h3 class="primary-font">Extraordinary affordability... but mostly not.</h3>
+                </div>
+                <div class="col-md-6">
+                    <ol class="breadcrumb pull-right hidden-xs">
+                        <li>@Html.ActionLink("Home", "Index", "Home")</li>
+                        <li class="active">Portfolio</li>
+                    </ol>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <p>
+        @Html.ActionLink("Add a Car", "Create") | @Html.ActionLink("Cool View", "Index")
+    </p>
+
+
+    <table class="table">
+        <tr style="background-color:gainsboro">
+            <th>
+                @Html.DisplayNameFor(model => model.Year)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Make)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Model)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Value)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.PicUrl)<br />
+                (Hover for larger image<br />Click for full size)
+            </th>
+            <th></th>
+        </tr>
+
+        @foreach (var item in Model)
+        {
+            @Html.HiddenFor(modelItem => item.Id)
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Year)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Make)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Model)
+                </td>
+                <td>
+                    $@Html.DisplayFor(modelItem => item.Value)
+                </td>
+                <td>
+                    @* display the thumbnail image at 100 pixels wide and apply link to full size image *@
+                    <a class="thumbnail" href="@Url.Content(item.PicUrl)">
+                        <img src="@Url.Content(item.PicUrl)" width="100" />
+                        @* set up the hover image - 525 pixels in width *@
+                        <span>
+                            <img src="@Url.Content(item.PicUrl)" width="525">
+                        </span>
+                    </a>
+                </td>
+                <td>
+                    @Html.ActionLink("Details", "Details", new { id = item.Id }) |
+                    @Html.ActionLink("Edit", "Edit", new { id = item.Id }) |
+                    @Html.ActionLink("Remove", "Delete", new { id = item.Id })
+                </td>
+            </tr>
+        }
+
+    </table>

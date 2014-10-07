@@ -81,13 +81,20 @@ namespace BaseMVCApp
                 roleManager.Create(new IdentityRole("Administrator"));
             }
 
-            var user = new ApplicationUser { UserName = "AdminUser", Email = "admin@coderfoundry.com" };
-
-            if (userManager.FindByName("AdminUser") == null)
+            var user = userManager.FindByName("AdminUser");
+            if (user == null)
             {
+                user = new ApplicationUser { UserName = "AdminUser", Email = "admin@coderfoundry.com" };
                 var result = userManager.Create(user, "Password-1");
 
                 if (result.Succeeded)
+                {
+                    userManager.AddToRole(user.Id, "Administrator");
+                }
+            }
+            else
+            {
+                if (!userManager.IsInRole(user.Id, "Administrator"))
                 {
                     userManager.AddToRole(user.Id, "Administrator");
                 }

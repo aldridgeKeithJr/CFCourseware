@@ -53,3 +53,4 @@ C:\Users\ajensen.CTU\Documents\GitHub\CFCourseware\Master\2_BaseMVCApp\BaseMVCAp
 C:\Users\ajensen.CTU\Documents\GitHub\CFCourseware\Master\2_BaseMVCApp\BaseMVCApp\bin\Microsoft.AspNet.Identity.EntityFramework.xml
 C:\Users\ajensen.CTU\Documents\GitHub\CFCourseware\Master\2_BaseMVCApp\BaseMVCApp\obj\Debug\BaseMVCApp.dll
 C:\Users\ajensen.CTU\Documents\GitHub\CFCourseware\Master\2_BaseMVCApp\BaseMVCApp\obj\Debug\BaseMVCApp.pdb
+C:\Users\ajensen.CTU\Documents\GitHub\CFCourseware\Master\2_BaseMVCApp\BaseMVCApp\obj\Debug\BaseMVCApp.csprojResolveAssemblyReference.cache
